@@ -11,6 +11,8 @@ The guide is not intended to be complete but rather give you some hints in the "
 
 You can give feedback by opening a new issue.
 
+![Working with the PDF next to the code](https://github.com/Splines/vscode-latex-wsl-setup/assets/37160523/6bbb9a4e-2993-4c90-a5fa-f55e541646d2)
+
 
 
 ## LaTeX installation & usage guide
@@ -22,7 +24,7 @@ You can give feedback by opening a new issue.
 
 Go to the windows store and search for "Ubuntu 22". Install it. I also highly recommend to install the "Windows Terminal" from the store, it's so convenient. Inside the Windows Terminal, you should now be able to login to WSL (your Ubuntu):
 
-![image](https://github.com/Splines/pap1/assets/37160523/810b56a0-a431-471f-ace2-6e14c1827d6c)
+![Login to WSL](https://github.com/Splines/vscode-latex-wsl-setup/assets/37160523/a8b617a2-4b3c-4a89-8bf0-9ed6b330ef7c)
 
 Make yourself at least familiar with these very basic Linux commands:
 - `cd` (home directory is called `~`), you can use tab completion for the `cd` command :)
@@ -50,13 +52,13 @@ At least take a glance at [CTAN](https://www.ctan.org/) (the Comprehensive TeX A
 Great, you've now got a working LaTeX distribution setup that we can use.
 
 Open VSCode and connect to WSL by pressing "F1", then typing "WSL: Connect to WSL". In the bottom left corner you should see this symbol:
-![image](https://github.com/Splines/pap1/assets/37160523/04ab6ff8-58b9-4c69-8790-8fc4154e4d3d)
+![Connected to WSL symbol in VSCode](https://github.com/Splines/vscode-latex-wsl-setup/assets/37160523/162760af-fa46-4201-b136-b8685410c327)
 
 Next, open a terminal in Ubuntu, e.g. either in VSCode directly or with the Windows Terminal. Navigate to a folder where you want to store your code, e.g. for me its `cd ~/programming/`. It could be anything you want. Then, download the repo content via `git clone https://github.com/Splines/vscode-latex-wsl-setup.git`. Go to the `src` folder using `cd ./src/` (`./` means starting relative to the current directory). Yeah, you have the code locally on your machine and can access it!
 
 Note you can save the current workspace with `File -> Save Workspace as`, then click `Show Local` to see your Windows folders, and store in somehwere, e.g. on your Desktop. This way, you just have to click on the workspace and VSCode starts exactly in the folder you left with the preferences you want for that workspace. I find this really convenient to quickly get back to a project. (You can also add different folders to your workspace by clicking `Add Folder to workspace`, e.g. different `Git` projects.) For example, in my `pap` workspace, I have the `pap` folder as well as the [`pappe` project](https://github.com/paul019/pappe) added to access them quickly, even though they don't have to be located in the same folder on WSL.
 
-![image](https://github.com/Splines/pap1/assets/37160523/fa6842f9-0d3a-43d3-ade2-9727ba2ecc0f)
+![Folders in my setup](https://github.com/Splines/vscode-latex-wsl-setup/assets/37160523/ee6a4f02-0069-42b4-9451-d5a2e6f00f97)
 
 
 Executing `ls -hl`, you should see the `document.tex` file inside the `src` folder. Change anything inside this file (so that you see the changes you've made in the PDF), then finally compile the PDF:
@@ -85,7 +87,7 @@ in the beginning of the `document.tex` file which serves as "root" file for our 
 
 Then, tell LaTeX Workshop that we want to build with `pdflatex`. To do so, press `Ctrl + ,` to open the settings tab. Click on `Workspace` to change the workspace settings. On the right top, click on the button thas has "Open Settings (JSON)" as tooltip. Inside the `settings` block, paste this configuration:
 
-```
+```json
 "latex-workshop.latex.tools": [
 			{
 				"name": "pdflatex",
