@@ -52,14 +52,14 @@ At least take a glance at [CTAN](https://www.ctan.org/) (the Comprehensive TeX A
 Great, you've now got a working LaTeX distribution setup that we can use.
 
 Open VSCode and connect to WSL by pressing "F1", then typing "WSL: Connect to WSL". In the bottom left corner you should see this symbol:
+
 ![Connected to WSL symbol in VSCode](https://github.com/Splines/vscode-latex-wsl-setup/assets/37160523/162760af-fa46-4201-b136-b8685410c327)
 
 Next, open a terminal in Ubuntu, e.g. either in VSCode directly or with the Windows Terminal. Navigate to a folder where you want to store your code, e.g. for me its `cd ~/programming/`. It could be anything you want. Then, download the repo content via `git clone https://github.com/Splines/vscode-latex-wsl-setup.git`. Go to the `src` folder using `cd ./src/` (`./` means starting relative to the current directory). Yeah, you have the code locally on your machine and can access it!
 
 Note you can save the current workspace with `File -> Save Workspace as`, then click `Show Local` to see your Windows folders, and store in somehwere, e.g. on your Desktop. This way, you just have to click on the workspace and VSCode starts exactly in the folder you left with the preferences you want for that workspace. I find this really convenient to quickly get back to a project. (You can also add different folders to your workspace by clicking `Add Folder to workspace`, e.g. different `Git` projects.) For example, in my `pap` workspace, I have the `pap` folder as well as the [`pappe` project](https://github.com/paul019/pappe) added to access them quickly, even though they don't have to be located in the same folder on WSL.
 
-![Folders in my setup](https://github.com/Splines/vscode-latex-wsl-setup/assets/37160523/ee6a4f02-0069-42b4-9451-d5a2e6f00f97)
-
+<img width="300px" src="https://github.com/Splines/vscode-latex-wsl-setup/assets/37160523/ee6a4f02-0069-42b4-9451-d5a2e6f00f97" alt="Folders in my setup"/>
 
 Executing `ls -hl`, you should see the `document.tex` file inside the `src` folder. Change anything inside this file (so that you see the changes you've made in the PDF), then finally compile the PDF:
 
@@ -114,3 +114,5 @@ Then, tell LaTeX Workshop that we want to build with `pdflatex`. To do so, press
 Awesome, now open any file of your current document, e.g. `content/intro.tex`, change a line, save the file and it should be automatically compiled without you having to open the terminal at all. More options are available via the LaTeX button in the left pane of VSCode. Best thing: PDF and code syncs! E.g. click on a word in the PDF viewer with `Ctrl + Click on word`. The respective file will open at that position. The other way round: Place your cursor in the LaTeX document and press `Ctrl + Alt + J`, it's magic ;)
 
 That's it, for more details consult the [LaTeX-workshop wiki](https://github.com/James-Yu/LaTeX-Workshop/wiki).
+
+For spell checking, I highly recommend the [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker), also available for the [German language](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker-german).
