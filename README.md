@@ -89,26 +89,26 @@ Then, tell LaTeX Workshop that we want to build with `pdflatex`. To do so, press
 
 ```json
 "latex-workshop.latex.tools": [
-			{
-				"name": "pdflatex",
-				"command": "pdflatex",
-				"args": [
-					"--shell-escape",
-					"-synctex=1",
-					"-interaction=nonstopmode",
-					"-file-line-error",
-					"%DOC%"
-				]
-			}
-		],
-		"latex-workshop.latex.recipes": [
-			{
-				"name": "pdflatex",
-				"tools": [
-					"pdflatex"
-				]
-			}
+	{
+		"name": "pdflatex",
+		"command": "pdflatex",
+		"args": [
+			"--shell-escape",
+			"-synctex=1",
+			"-interaction=nonstopmode",
+			"-file-line-error",
+			"%DOC%"
 		]
+	}
+],
+"latex-workshop.latex.recipes": [
+	{
+		"name": "pdflatex",
+		"tools": [
+			"pdflatex"
+		]
+	}
+]
 ```
 
 Awesome, now open any file of your current document, e.g. `content/intro.tex`, change a line, save the file and it should be automatically compiled without you having to open the terminal at all. More options are available via the LaTeX button in the left pane of VSCode. Best thing: PDF and code syncs! E.g. click on a word in the PDF viewer with `Ctrl + Click on word`. The respective file will open at that position. The other way round: Place your cursor in the LaTeX document and press `Ctrl + Alt + J`, it's magic ;)
