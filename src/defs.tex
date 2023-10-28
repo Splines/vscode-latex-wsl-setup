@@ -1,0 +1,59 @@
+% for convenience
+% usage: \q{I am citing} in order to get "I am citing"
+\newcommand{\q}[1]{\enquote{#1}}
+
+\newcommand{\set}[1]{\ensuremath{\{\,#1\,\}}}
+\newcommand*{\coloniff}{\ratio\Leftrightarrow}
+\newcommand*{\colonLeftrightarrow}{\ratio\Leftrightarrow}
+\renewcommand{\implies}{\Rightarrow}
+\renewcommand{\impliedby}{\Leftarrow}
+\renewcommand{\iff}{\Leftrightarrow}
+\newcommand{\definedAs}{\ratio\Leftrightarrow}
+\newcommand{\perc}[1]{\ensuremath{\qty{#1}{\percent}}}
+\newcommand{\solution}[1]{\ensuremath{\underline{\underline{#1}}}}
+\newcommand{\determ}{\operatorname{det}}
+\newcommand{\R}{\mathbb{R}}
+
+% German specific
+\newcommand{\zB}{z.\,B. }
+\newcommand{\dash}{d.\,h. }
+
+% Text over equal sign, e.g. to indicate that a specific definition was used
+% usage: \eqdef{text over equal sign}
+% https://tex.stackexchange.com/a/74132
+\newcommand{\eqdef}[1]{\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\tiny\sffamily #1}}}{=}}}
+\newcommand{\impliesdef}[1]{\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\tiny\sffamily #1}}}{\implies}}}
+% https://tex.stackexchange.com/questions/9466/color-underline-a-formula
+\newcommand{\mline}[2][red]{\color{#1}\underline{{\color{black}#2}}\color{black}}
+
+% Math environments
+\newenvironment{eqarrows}{
+	\begin{equation}
+		\begin{WithArrows}
+		}{%
+		\end{WithArrows}
+	\end{equation}
+	\ignorespacesafterend
+}
+\newenvironment{eqarrows*}[1][]{
+	\begin{equation*}
+		\begin{WithArrows}[#1]
+		}{%
+		\end{WithArrows}
+	\end{equation*}
+	\ignorespacesafterend
+}
+\newenvironment{eqboxed}{
+	% https://tex.stackexchange.com/questions/419132/newenvironment-with-empheq-inside-tcolorbox
+	\empheq[box=\fbox]{align}
+	}{%
+	\endempheq%
+	\ignorespacesafterend
+}
+\newenvironment{eqboxed*}{
+	% https://tex.stackexchange.com/questions/419132/newenvironment-with-empheq-inside-tcolorbox
+	\empheq[box=\fbox]{align*}
+	}{%
+	\endempheq%
+	\ignorespacesafterend
+}

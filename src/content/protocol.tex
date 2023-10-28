@@ -1,0 +1,24 @@
+\newenvironment{preface}{\thispagestyle{empty}\topskip0pt\vspace*{\fill}\small}{\vspace*{\fill}}
+
+
+\begin{preface}
+    \begin{center}
+
+        \section{Protokoll}\label{sec:protocol}
+        Der folgende Teil beinhaltet das Protokoll des Experiments (\textit{bereitgestellt von ABC}). Hier sind auch weitere Details zur Durchführung des Experiments angegeben, \zB die verwendeten Geräte. Messfehler sind stets mit vermerkt.
+
+        \begin{enumerate}[label=\textbf{\arabic*}]
+            \item \textbf{Vorbereitung}
+            \item \textbf{Skizze}
+            \item \textbf{Messung 1: Anzahl an Bäumen}
+        \end{enumerate}
+
+    \end{center}
+\end{preface}
+
+% First entry specifies the page where the section starts
+\includepdf[pages=-,addtotoc={
+            1,subsection,1,Vorbereitung,prot:prep,
+            1,subsection,1,Skizze,prot:sketch,
+            1,subsection,1,Messung 1: Anzahl an Bäumen,prot:messung1
+        }]{assets/protocol.pdf}

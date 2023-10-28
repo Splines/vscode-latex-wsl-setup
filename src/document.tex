@@ -1,0 +1,60 @@
+\documentclass[10pt,a4paper,ngerman]{article}
+
+\input{preamble}
+\input{defs}
+\input{prettify-math}
+
+% Meta values
+\newcommand{\subject}{Schwankungen von Bäumen}
+\newcommand{\subjectshort}{Bäume}
+\newcommand{\experimentnumber}{42}
+\newcommand{\experiment}{Experiment \experimentnumber}
+\newcommand{\advisor}{Betreuer: ABC}
+\newcommand{\authors}{Splines}
+\newcommand{\experimentdate}{05.07.1687}
+\newcommand{\group}{Newton'sche Vormittagsgruppe}
+
+% Header
+\pagestyle{fancy}
+\lhead{\experimentnumber: \subjectshort}
+\rhead{\rightmark}
+
+\setstretch{1.25}
+\begin{document}
+\setlength{\abovedisplayskip}{0.2em}
+%\setlength{\belowdisplayskip}{0pt}
+%\setlength{\abovedisplayshortskip}{0pt}
+%\setlength{\belowdisplayshortskip}{0pt}
+
+\thispagestyle{plain} % empty header, footer contains page number
+
+% smaller top margin on first page
+\vspace*{-2cm}
+
+\begin{FlushLeft}
+	\LARGE \textbf{\subject}\\
+	\large \experiment\\
+	
+	\normalsize \advisor\\
+	\authors\\
+	
+	\experimentdate, \group
+	\hfill
+	
+	\vspace{3mm}
+	
+	\textcolor{heidelberg-red}{\rule{\linewidth}{1mm}}
+\end{FlushLeft}
+
+% Content
+\tableofcontents
+\setcounter{section}{0}
+\pagebreak
+\input{content/intro.tex}
+\pagebreak
+\input{content/protocol.tex}
+\pagebreak
+\input{content/evaluation.tex}
+\pagebreak
+\input{content/discussion.tex}
+\end{document}

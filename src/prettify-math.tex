@@ -1,0 +1,53 @@
+% Other math stuff
+% vector with prime symbol
+\newcommand{\vecp}[1]{\ensuremath{\vec{#1}^{\,\prime}}}
+\newcommand{\dvecp}[1]{\ensuremath{\dvec{#1}^{\,\prime}}}
+\newcommand{\ddvecp}[1]{\ensuremath{\ddvec{#1}^{\,\prime}}}
+% vector prime with subscript
+\newcommand{\vecps}[2]{\ensuremath{\vec{#1}^{\,\prime}_{\!#2}}}
+
+% copied from https://tex.stackexchange.com/a/44071/249769
+% Macro \xvec
+\makeatletter
+\newlength\xvec@height%
+\newlength\xvec@depth%
+\newlength\xvec@width%
+\newcommand{\xvec}[2][]{%
+	\ifmmode%
+	\settoheight{\xvec@height}{$#2$}%
+	\settodepth{\xvec@depth}{$#2$}%
+	\settowidth{\xvec@width}{$#2$}%
+	\else%
+	\settoheight{\xvec@height}{#2}%
+	\settodepth{\xvec@depth}{#2}%
+	\settowidth{\xvec@width}{#2}%
+	\fi%
+	\def\xvec@arg{#1}%
+	\def\xvec@dd{:}%
+	\def\xvec@d{.}%
+	\raisebox{.2ex}{\raisebox{\xvec@height}{\rlap{%
+				\kern.05em%  (Because left edge of drawing is at .05em)
+				\begin{tikzpicture}[scale=1]
+					\pgfsetroundcap
+					\draw (.05em,0)--(\xvec@width-.05em,0);
+					\draw (\xvec@width-.05em,0)--(\xvec@width-.15em, .075em);
+					\draw (\xvec@width-.05em,0)--(\xvec@width-.15em,-.075em);
+					\ifx\xvec@arg\xvec@d%
+					\fill(\xvec@width*.45,.5ex) circle (.5pt);%
+					\else\ifx\xvec@arg\xvec@dd%
+					\fill(\xvec@width*.30,.5ex) circle (.5pt);%
+					\fill(\xvec@width*.65,.5ex) circle (.5pt);%
+					\fi\fi%
+				\end{tikzpicture}%
+	}}}%
+	#2%
+}
+\makeatother
+
+% --- Override \vec with an invocation of \xvec.
+\let\stdvec\vec
+\let\ovec\vec
+\renewcommand{\vec}[1]{\xvec[]{#1}}
+% --- Define \dvec and \ddvec for dotted and double-dotted vectors.
+\newcommand{\dvec}[1]{\xvec[.]{#1}}
+\newcommand{\ddvec}[1]{\xvec[:]{#1}}
