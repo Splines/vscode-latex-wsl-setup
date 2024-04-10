@@ -39,7 +39,7 @@ Make yourself at least familiar with these very basic Linux commands:
 You might have installed MikTeX as LaTeX distribution on Windows. On Linux, one well-known distribution is called TeXLive. We will install it with all the packages we need through the Ubuntu `apt` package manager. See the installation choices you have [here](https://tex.stackexchange.com/a/504566). See the TeXLive installation guide [here](https://wiki.ubuntuusers.de/TeX_Live/#Installation). We will use this:
 
 ```
-sudo apt install texlive texlive-lang-german texlive-latex-extra texlive-latex-science
+sudo apt install texlive texlive-lang-german texlive-latex-extra texlive-science
 ```
 
 Note that this will not install the newest TeXLive version but instead only uses the one provided in the [Ubuntu package registry](https://packages.ubuntu.com/), which are oftentimes outdated. However, this doesn't bother us for the moment, as everything still works (and in this context this shouldn't impose any security issue). If you want to update packages later, use the [`update-tlmbr-latest.sh` script](https://tex.stackexchange.com/a/537810) (not needed for right now).
