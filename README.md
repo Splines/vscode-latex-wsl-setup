@@ -51,7 +51,7 @@ At least take a glance at [CTAN](https://www.ctan.org/) (the Comprehensive TeX A
 
 Great, you've now got a working LaTeX distribution setup that we can use.
 
-Open VSCode and connect to WSL by pressing "F1", then typing "WSL: Connect to WSL". In the bottom left corner you should see this symbol:
+Open VSCode and connect to WSL by pressing `Ctrl + Shift + P`, then typing "WSL: Connect to WSL" (you need the WSL extension for that, also see the [official VSCode on how to connect to WSL](https://code.visualstudio.com/docs/remote/wsl#_installation)). In the bottom left corner you should see this symbol:
 
 ![Connected to WSL symbol in VSCode](https://github.com/Splines/vscode-latex-wsl-setup/assets/37160523/162760af-fa46-4201-b136-b8685410c327)
 
