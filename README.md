@@ -1,3 +1,7 @@
+> [!tip]
+> While I still use this LaTeX setup from time to time, I made the switch to the amazing [**typst**](https://github.com/typst/typst) project. All you have to do is to install the [Tinymist Typst language server](https://myriad-dreamin.github.io/tinymist//frontend/vscode.html), which already ships with Typst binaries, so you don't even have to install the Rust toolchain. Getting your document compiled in under 100ms is just such a nice experience and the language syntax is far easier to learn than LaTeX. The [Typst Universe](https://typst.app/universe/) comes with many great, user-provided packages to extend Typst's capabilities.
+
+
 # My LaTeX Setup
 
 This small setup guide is intended
